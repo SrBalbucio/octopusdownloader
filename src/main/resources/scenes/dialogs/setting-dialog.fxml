@@ -24,15 +24,25 @@
   ~ SOFTWARE.
   -->
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
-            fx:controller="org.octopus.dialogs.setting.OctupusSettingController">
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.octopus.dialogs.setting.OctupusSettingController">
     <center>
         <TabPane prefHeight="476.0" prefWidth="626.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
             <tabs>
@@ -42,73 +52,60 @@
                             <children>
                                 <GridPane layoutY="4.0" prefHeight="427.0" prefWidth="600.0">
                                     <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0"
-                                                           prefWidth="177.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0"
-                                                           prefWidth="317.0"/>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0"
-                                                           prefWidth="110.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="177.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="317.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="110.0" />
                                     </columnConstraints>
                                     <rowConstraints>
-                                        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="74.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="252.0" minHeight="0.0" prefHeight="68.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="78.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="74.0"
-                                                        vgrow="SOMETIMES"/>
-                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="141.0"
-                                                        vgrow="SOMETIMES"/>
+                                        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="252.0" minHeight="0.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="336.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <Label prefHeight="44.0" prefWidth="211.0" text="Temparary Directory">
                                             <GridPane.margin>
-                                                <Insets left="6.0"/>
+                                                <Insets left="6.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="Maximum Multiparts" GridPane.rowIndex="1">
                                             <GridPane.margin>
-                                                <Insets left="10.0"/>
+                                                <Insets left="10.0" />
                                             </GridPane.margin>
                                         </Label>
                                         <Label text="Buffer size" GridPane.rowIndex="2">
                                             <padding>
-                                                <Insets left="10.0"/>
+                                                <Insets left="10.0" />
                                             </padding>
                                         </Label>
-                                        <TextField fx:id="buttonTempDownloadPath" prefHeight="38.0" prefWidth="298.0"
-                                                   GridPane.columnIndex="1">
+                                        <TextField fx:id="buttonTempDownloadPath" prefHeight="38.0" prefWidth="298.0" GridPane.columnIndex="1">
                                             <GridPane.margin>
-                                                <Insets/>
+                                                <Insets />
                                             </GridPane.margin>
                                             <font>
-                                                <Font size="16.0"/>
+                                                <Font size="16.0" />
                                             </font>
                                         </TextField>
-                                        <TextField fx:id="buttonMultipartSize" GridPane.columnIndex="1"
-                                                   GridPane.rowIndex="1">
+                                        <TextField fx:id="buttonMultipartSize" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                             <GridPane.margin>
-                                                <Insets/>
+                                                <Insets />
                                             </GridPane.margin>
                                         </TextField>
-                                        <TextField fx:id="buttonBufferSize" GridPane.columnIndex="1"
-                                                   GridPane.rowIndex="2"/>
-                                        <Button fx:id="Browse" mnemonicParsing="false" onAction="#openDirectoryPicker"
-                                                prefHeight="38.0" prefWidth="96.0" text="Browse" textAlignment="RIGHT"
-                                                GridPane.columnIndex="2">
+                                        <TextField fx:id="buttonBufferSize" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Button fx:id="Browse" mnemonicParsing="false" onAction="#openDirectoryPicker" prefHeight="38.0" prefWidth="96.0" text="Browse" textAlignment="RIGHT" GridPane.columnIndex="2">
                                             <graphic>
-                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true"
-                                                           preserveRatio="true">
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@/images/icons8-opened-folder-48.png"/>
+                                                        <Image url="@/images/icons8-opened-folder-48.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                         </Button>
+                              <CheckBox mnemonicParsing="false" text="Retry on error automatically" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                     </children>
                                 </GridPane>
                             </children>
@@ -119,35 +116,24 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="435.0"
-                                           prefWidth="600.0">
+                                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="435.0" prefWidth="600.0">
                                     <items>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                             <children>
-                                                <TextField fx:id="httpPortText" layoutX="134.0" layoutY="99.0"
-                                                           prefHeight="22.0" prefWidth="236.0" promptText="port"/>
-                                                <RadioButton id="http" fx:id="buttonHttp" layoutX="14.0" layoutY="14.0"
-                                                             mnemonicParsing="false" onAction="#setFieldActive"
-                                                             selected="true" text="HTTP "/>
-                                                <TextField fx:id="httpHostText" layoutX="134.0" layoutY="48.0"
-                                                           prefHeight="38.0" prefWidth="233.0" promptText="proxy url"/>
-                                                <Label layoutX="39.0" layoutY="54.0" prefHeight="26.0" prefWidth="81.0"
-                                                       text="HOST"/>
-                                                <Label layoutX="39.0" layoutY="105.0" prefHeight="26.0" prefWidth="71.0"
-                                                       text="PORT"/>
+                                                <TextField fx:id="httpPortText" layoutX="134.0" layoutY="99.0" prefHeight="22.0" prefWidth="236.0" promptText="port" />
+                                                <RadioButton id="http" fx:id="buttonHttp" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setFieldActive" selected="true" text="HTTP " />
+                                                <TextField fx:id="httpHostText" layoutX="134.0" layoutY="48.0" prefHeight="38.0" prefWidth="233.0" promptText="proxy url" />
+                                                <Label layoutX="39.0" layoutY="54.0" prefHeight="26.0" prefWidth="81.0" text="HOST" />
+                                                <Label layoutX="39.0" layoutY="105.0" prefHeight="26.0" prefWidth="71.0" text="PORT" />
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="598.0">
                                             <children>
-                                                <RadioButton fx:id="buttonSocket" layoutX="14.0" layoutY="14.0"
-                                                             mnemonicParsing="false" onAction="#setFieldActive"
-                                                             text="Socket "/>
-                                                <Label layoutX="45.0" layoutY="61.0" text="HOST"/>
-                                                <Label layoutX="45.0" layoutY="106.0" text="PORT"/>
-                                                <TextField fx:id="socketHostText" layoutX="139.0" layoutY="55.0"
-                                                           promptText="socket url"/>
-                                                <TextField fx:id="socketPortText" layoutX="139.0" layoutY="100.0"
-                                                           promptText="port"/>
+                                                <RadioButton fx:id="buttonSocket" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setFieldActive" text="Socket " />
+                                                <Label layoutX="45.0" layoutY="61.0" text="HOST" />
+                                                <Label layoutX="45.0" layoutY="106.0" text="PORT" />
+                                                <TextField fx:id="socketHostText" layoutX="139.0" layoutY="55.0" promptText="socket url" />
+                                                <TextField fx:id="socketPortText" layoutX="139.0" layoutY="100.0" promptText="port" />
                                             </children>
                                         </AnchorPane>
                                     </items>

@@ -27,6 +27,7 @@ package org.octopus.dialogs.setting;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -53,6 +54,7 @@ public class OctupusSettingController {
     public TextField buttonTempDownloadPath;
     public TextField buttonMultipartSize;
     public TextField buttonBufferSize;
+    public CheckBox retry;
 
     private Stage root;
     @FXML
